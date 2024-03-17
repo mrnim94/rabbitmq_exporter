@@ -31,7 +31,7 @@ func TestQueueCount(t *testing.T) {
 		exporterURL = fmt.Sprintf("http://localhost:%s/metrics", defaultConfig.PublishPort)
 		rabbitManagementURL = env.ManagementURL()
 		os.Setenv("RABBIT_URL", rabbitManagementURL)
-		os.Setenv("RABBIT_CAPABILITIES", "bert,no_sort")
+		os.Setenv("RABBIT_CAPABILITIES", "bert") // no_sort not supported in rabbitmq 3.13+
 		defer os.Unsetenv("RABBIT_URL")
 		defer os.Unsetenv("RABBIT_CAPABILITIES")
 

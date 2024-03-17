@@ -18,7 +18,7 @@ import (
 	dockertest "github.com/ory/dockertest/v3"
 )
 
-//list of docker tags with rabbitmq versions
+// list of docker tags with rabbitmq versions
 const (
 	RabbitMQ3Latest = "3-management-alpine"
 )
@@ -26,7 +26,7 @@ const (
 // MaxWait is time before the docker setup will fail with timeout
 var MaxWait = 20 * time.Second
 
-//TestEnvironment contains all necessars
+// TestEnvironment contains all necessars
 type TestEnvironment struct {
 	t        *testing.T
 	docker   *dockertest.Pool
@@ -34,7 +34,7 @@ type TestEnvironment struct {
 	Rabbit   rabbit
 }
 
-//NewEnvironment sets up a new environment. It will nlog fatal if something goes wrong
+// NewEnvironment sets up a new environment. It will nlog fatal if something goes wrong
 func NewEnvironment(t *testing.T, dockerTag string) TestEnvironment {
 	t.Helper()
 	tenv := TestEnvironment{t: t}
@@ -91,13 +91,13 @@ func (tenv *TestEnvironment) CleanUp() {
 	}
 }
 
-//ManagementURL returns the full http url including username/password to the management api in the docker environment.
+// ManagementURL returns the full http url including username/password to the management api in the docker environment.
 // e.g. http://guest:guest@localhost:15672
 func (tenv *TestEnvironment) ManagementURL() string {
 	return fmt.Sprintf("http://guest:guest@%s:%s", tenv.getHost(), tenv.resource.GetPort("15672/tcp"))
 }
 
-//AmqpURL returns the url to the rabbitmq server
+// AmqpURL returns the url to the rabbitmq server
 // e.g. amqp://localhost:5672
 func (tenv *TestEnvironment) AmqpURL(withCred bool) string {
 	return fmt.Sprintf("amqp://%s:%s", tenv.getHost(), tenv.resource.GetPort("5672/tcp"))
