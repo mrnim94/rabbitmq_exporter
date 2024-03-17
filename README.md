@@ -116,6 +116,7 @@ probalby best solution is to use both exporters:
 
 This exporter expects capabilities from rabbitmq 3.6.8 or newer by default.
 If you are running older than 3.6.8 you must disable bert and no_sort with the setting RABBIT_CAPABILITIES=compat.
+If you are running 3.13.0 or newer you must disable no_sort with the setting RABBIT_CAPABILITIES=no_sort.
 
 ### missing data in graphs
 
