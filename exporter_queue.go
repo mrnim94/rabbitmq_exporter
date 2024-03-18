@@ -38,6 +38,8 @@ var (
 		"garbage_collection.fullsweep_after":        newGaugeVec("queue_gc_collections_before_fullsweep", "Maximum generational collections before fullsweep", queueLabels),
 		"slave_nodes_len":                           newGaugeVec("queue_slaves_nodes_len", "Number of slave nodes attached to the queue", queueLabels),
 		"synchronised_slave_nodes_len":              newGaugeVec("queue_synchronised_slave_nodes_len", "Number of slave nodes in sync to the queue", queueLabels),
+		"members_len":                               newGaugeVec("queue_member_nodes_len", "Number of quorum queue member nodes for the queue", queueLabels),
+		"online_len":                                newGaugeVec("queue_online_nodes_len", "Number of online members nodes for the queue", queueLabels),
 		"message_stats.publish_details.rate":        newGaugeVec("queue_messages_publish_rate", "Rate at which messages are entering the server.", queueLabels),
 		"message_stats.deliver_no_ack_details.rate": newGaugeVec("queue_messages_deliver_no_ack_rate", "Rate at which messages are delivered to consumers that use automatic acknowledgements.", queueLabels),
 		"message_stats.deliver_details.rate":        newGaugeVec("queue_messages_deliver_rate", "Rate at which messages are delivered to consumers that use manual acknowledgements.", queueLabels),
