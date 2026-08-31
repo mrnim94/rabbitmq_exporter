@@ -5,7 +5,7 @@ require (
 	github.com/kylelemons/godebug v1.1.0
 	github.com/ory/dockertest/v3 v3.10.0
 	github.com/prometheus/client_golang v1.19.1
-	github.com/sirupsen/logrus v1.9.3
+	github.com/sirupsen/logrus v1.10.2
 	github.com/streadway/amqp v1.1.0
 	github.com/tkanos/gonfig v0.0.0-20210106201359-53e13348de2f
 	golang.org/x/sys v0.25.0
@@ -47,6 +47,6 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
 
-go 1.21
+go 1.23
 
 toolchain go1.23.1
